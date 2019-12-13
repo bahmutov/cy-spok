@@ -1,34 +1,36 @@
 /// <reference types="Cypress" />
 
-import spok from "spok"
-import stripAnsi from "strip-ansi"
+import spok from "./spok-helper"
 
-spok.color = false
-spok.printDescription = false
+// import spok from "spok"
+// import stripAnsi from "strip-ansi"
 
-class Assert {
-  constructor() {
-    this.failed = []
-    this.passed = []
-  }
+// spok.color = false
+// spok.printDescription = false
 
-  equal(actual, expected, msg) {
-    if (actual !== expected) {
-      this.failed.push(msg)
-    } else {
-      this.passed.push(msg)
-    }
-  }
+// class Assert {
+//   constructor() {
+//     this.failed = []
+//     this.passed = []
+//   }
 
-  deepEqual(actual, expected, msg) {
-    const pass = deepEqual(actual, expected)
-    if (!pass) {
-      this.failed.push(msg)
-    } else {
-      this.passed.push(msg)
-    }
-  }
-}
+//   equal(actual, expected, msg) {
+//     if (actual !== expected) {
+//       this.failed.push(msg)
+//     } else {
+//       this.passed.push(msg)
+//     }
+//   }
+
+//   deepEqual(actual, expected, msg) {
+//     const pass = deepEqual(actual, expected)
+//     if (!pass) {
+//       this.failed.push(msg)
+//     } else {
+//       this.passed.push(msg)
+//     }
+//   }
+// }
 
 // Cypress.Commands.overwrite('should', (should, ...args) => {
 //   if (args[1] === 'spok' && Object.keys(args[2].length > 1)) {
@@ -49,51 +51,51 @@ class Assert {
 //   }
 // })
 
-const spokAssertion = (_chai, utils) => {
-  function checkSpok(expectation) {
-    console.log('_chai is', _chai)
-    console.log('utils', utils)
-    console.log('value', this._obj)
-    console.log('expectations', expectation)
+// const spokAssertion = (_chai, utils) => {
+//   function checkSpok(expectation) {
+//     console.log('_chai is', _chai)
+//     console.log('utils', utils)
+//     console.log('value', this._obj)
+//     console.log('expectations', expectation)
 
-    const assert = new Assert()
-    spok(assert, this._obj, expectation)
+//     const assert = new Assert()
+//     spok(assert, this._obj, expectation)
 
-    const agreement = assert.passed.map(stripAnsi).join(', ')
-    if (agreement) {
-      this.assert(true, agreement)
-    }
+//     const agreement = assert.passed.map(stripAnsi).join(', ')
+//     if (agreement) {
+//       this.assert(true, agreement)
+//     }
 
-    if (assert.failed.length) {
-      assert.failed.forEach((message) => {
-        this.assert(false, stripAnsi(message))
-      })
-    } else {
-      // assert.passed.forEach(message => {
-      //   this.assert(true, stripAnsi(message))
-      // })
-    }
-  }
+//     if (assert.failed.length) {
+//       assert.failed.forEach((message) => {
+//         this.assert(false, stripAnsi(message))
+//       })
+//     } else {
+//       // assert.passed.forEach(message => {
+//       //   this.assert(true, stripAnsi(message))
+//       // })
+//     }
+//   }
 
-  _chai.Assertion.addMethod('spok', checkSpok)
-}
+//   _chai.Assertion.addMethod('spok', checkSpok)
+// }
 
-chai.use(spokAssertion)
+// chai.use(spokAssertion)
 
-it('spoks', () => {
+it.only('spoks', () => {
   const o = {
     name: 'Hello world',
     guess: 50
   }
 
   // using Spok
-  cy.wrap(o).should('spok', {
+  cy.wrap(o).should(spok({
     name: spok.startsWith('Hello'),
     guess: spok.range(1, 10)
-  })
+  }))
 
   setTimeout(() => {
-    o.guess = 7
+    o.guess = 70
   }, 1000)
 })
 

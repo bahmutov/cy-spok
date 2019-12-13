@@ -35,9 +35,16 @@ class Assert {
 //     // create individual should assertions
 //     // expect(args[0], 'spok', Cypress._.pick(args[2], 'name'))
 //     // expect(args[0], 'spok', Cypress._.pick(args[2], 'guess'))
-//     expect('foo').to.equal('foo')
-//     expect('bar').to.equal('bar')
+//     // expect('foo').to.equal('foo')
+//     // expect('bar').to.equal('bar')
+//     const obj = args[0]
+//     return should(args[0], () => {
+//       console.log('inside should callback')
+//       expect('foo').to.equal('foo')
+//       expect('bar').to.equal('bar')
+//     })
 //   } else {
+//     console.log('calling original should')
 //     return should(...args)
 //   }
 // })
@@ -78,9 +85,28 @@ it('spoks', () => {
     name: 'Hello world',
     guess: 50
   }
+
+  // using Spok
   cy.wrap(o).should('spok', {
     name: spok.startsWith('Hello'),
     guess: spok.range(1, 10)
+  })
+
+  setTimeout(() => {
+    o.guess = 7
+  }, 1000)
+})
+
+it('uses should cb', () => {
+  const o = {
+    name: 'Hello world',
+    guess: 50
+  }
+
+  // using "regular" should callback function
+  cy.wrap(o).should(obj => {
+    expect(obj.name).to.match(/^Hello/)
+    expect(obj.guess).to.be.gte(1).and.lte(10)
   })
 
   setTimeout(() => {

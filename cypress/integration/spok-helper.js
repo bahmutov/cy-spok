@@ -36,13 +36,23 @@ const spokHelper = (expectation) => {
     const assert = new Assert()
     spok(assert, value, expectation)
 
+    const chaiUtilGetMessage = chai.util.getMessage
+
+    chai.util.getMessage = function (assert, args) {
+      return assert.__flags.message
+    }
+
     assert.passed.forEach(message => {
-      expect(true, stripAnsi(message)).to.be.true
+      const msg = stripAnsi(message)
+      expect(true, msg).to.be.true
     })
 
     assert.failed.forEach((message) => {
-      expect(false, stripAnsi(message)).to.be.true
+      const msg = stripAnsi(message)
+      expect(true, msg).to.be.false
     })
+
+    chai.util.getMessage = chaiUtilGetMessage
   }
 }
 // adds all spok conditions

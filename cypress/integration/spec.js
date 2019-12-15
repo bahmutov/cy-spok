@@ -2,7 +2,7 @@
 
 import spok from './spok-helper'
 
-it.only('spoks', () => {
+it('spoks', () => {
   const object = {
     one: 1,
     two: 2,
@@ -23,7 +23,7 @@ it.only('spoks', () => {
       $topic: 'spok-example',
       one: spok.ge(1),
       two: 2,
-      three: spok.range(2, 2),
+      three: spok.range(2, 6),
       four: spok.lt(5),
       helloWorld: spok.startsWith('hello'),
       anyNum: spok.type('number'),

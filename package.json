@@ -1,6 +1,6 @@
 {
   "name": "cy-spok",
-  "version": "1.2.0",
+  "version": "0.0.0-development",
   "description": "Wrapper for spok assertion",
   "main": "index.js",
   "private": false,

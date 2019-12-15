@@ -1,20 +1,28 @@
 {
   "name": "cy-spok",
   "version": "0.0.0-development",
-  "description": "",
+  "description": "Wrapper for spok assertion",
   "main": "index.js",
   "scripts": {
     "test": "cypress run",
     "postinstall": "patch-package"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "cypress": "3.8.0",
+  "keywords": [
+    "spok",
+    "cypress-plugin"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
     "patch-package": "6.2.0",
-    "prettier": "1.19.1",
     "spok": "1.1.0",
     "strip-ansi": "6.0.0"
-  }
+  },
+  "devDependencies": {
+    "cypress": "3.8.0",
+    "prettier": "1.19.1"
+  },
+  "files": [
+    "patches"
+  ]
 }

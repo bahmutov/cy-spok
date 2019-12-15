@@ -1,5 +1,5 @@
-import spok from "spok"
-import stripAnsi from "strip-ansi"
+import spok from 'spok'
+import stripAnsi from 'strip-ansi'
 
 spok.color = false
 spok.printDescription = false
@@ -28,31 +28,39 @@ class Assert {
   }
 }
 
-const spokHelper = (expectation) => {
-  return function (value) {
+const spokHelper = expectation => {
+  return function(value) {
     console.log('value', value)
     console.log('expectations', expectation)
 
     const assert = new Assert()
     spok(assert, value, expectation)
 
+    // by default, Chai assertions will print actual and expected values
+    // but Spok already gives us the complete error message
+    // we overwrite util.getMessage to simply return Spok's message
+    // Make sure to restore the original getMessage in all circumstances!
     const chaiUtilGetMessage = chai.util.getMessage
 
-    chai.util.getMessage = function (assert, args) {
-      return assert.__flags.message
+    try {
+      chai.util.getMessage = function(assert, args) {
+        return assert.__flags.message
+      }
+
+      assert.passed.forEach(message => {
+        const msg = stripAnsi(message)
+        // create passing assertion in the Command Log
+        expect(true, msg).to.be.true
+      })
+
+      assert.failed.forEach(message => {
+        const msg = stripAnsi(message)
+        // create failing assertion in the Command Log
+        expect(true, msg).to.be.false
+      })
+    } finally {
+      chai.util.getMessage = chaiUtilGetMessage
     }
-
-    assert.passed.forEach(message => {
-      const msg = stripAnsi(message)
-      expect(true, msg).to.be.true
-    })
-
-    assert.failed.forEach((message) => {
-      const msg = stripAnsi(message)
-      expect(true, msg).to.be.false
-    })
-
-    chai.util.getMessage = chaiUtilGetMessage
   }
 }
 // adds all spok conditions

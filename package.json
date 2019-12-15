@@ -3,6 +3,7 @@
   "version": "0.0.0-development",
   "description": "Wrapper for spok assertion",
   "main": "index.js",
+  "private": false,
   "scripts": {
     "test": "cypress run",
     "postinstall": "patch-package"

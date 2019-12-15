@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run"
+    "test": "cypress run",
+    "postinstall": "patch-package"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress": "3.8.0",
+    "patch-package": "6.2.0",
     "prettier": "1.19.1",
     "spok": "1.1.0",
     "strip-ansi": "6.0.0"

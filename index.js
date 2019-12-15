@@ -66,4 +66,4 @@ const spokHelper = expectation => {
 // adds all spok conditions
 Object.assign(spokHelper, spok)
 
-export default spokHelper
+module.exports = spokHelper

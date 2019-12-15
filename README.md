@@ -2,7 +2,7 @@
 
 > Playing with [spok](https://github.com/thlorenz/spok) inside Cypress test
 
-![GH Action status](https://github.com/actions/bahmutov/cy-spok/main/badge.svg?branch=master)
+![GH Action status](https://github.com/bahmutov/cy-spok/workflows/main/badge.svg?branch=master)
 
 See [cypress/integration/spec.js](cypress/integration/spec.js)
 

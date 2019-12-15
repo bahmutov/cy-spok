@@ -5,8 +5,7 @@
   "main": "index.js",
   "private": false,
   "scripts": {
-    "test": "cypress run",
-    "postinstall": "patch-package"
+    "test": "cypress run"
   },
   "keywords": [
     "spok",
@@ -15,15 +14,12 @@
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "patch-package": "6.2.0",
-    "spok": "1.1.0",
+    "spok": "github:bahmutov/spok#7a1c65c",
     "strip-ansi": "6.0.0"
   },
   "devDependencies": {
     "cypress": "3.8.0",
     "prettier": "1.19.1"
   },
-  "files": [
-    "patches"
-  ]
+  "files": []
 }

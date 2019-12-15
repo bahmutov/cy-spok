@@ -1,5 +1,5 @@
-import spok from 'spok'
-import stripAnsi from 'strip-ansi'
+const spok = require('spok').default
+const stripAnsi = require('strip-ansi')
 
 spok.color = false
 spok.printDescription = false

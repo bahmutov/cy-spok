@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-import spok from './spok-helper'
+import spok from '../..'
 
 it('spoks', () => {
   const object = {
@@ -32,6 +32,26 @@ it('spoks', () => {
       anObject: spok.ne(undefined),
     }),
   )
+})
+
+it('retries until all pass', () => {
+  const object = {
+    one: 1,
+    two: -1, // starts as incorrect value
+  }
+
+  cy.wrap(object, { timeout: 2000 }).should(
+    spok({
+      $topic: 'spok-retries',
+      one: 1,
+      two: 2,
+    }),
+  )
+
+  setTimeout(() => {
+    // fix the property
+    object.two = 2
+  }, 500)
 })
 
 it('uses should cb', () => {

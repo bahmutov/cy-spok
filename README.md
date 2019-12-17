@@ -2,10 +2,13 @@
 
 > Playing with [spok](https://github.com/thlorenz/spok) inside Cypress test
 
-| CI                                                             | status                                                                                                         |
-| -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| cy-spok                                                        | ![GH Action status](https://github.com/bahmutov/cy-spok/workflows/main/badge.svg?branch=master)                |
-| [cy-spok-example](https://github.com/bahmutov/cy-spok-example) | ![cy-spok-example status](https://github.com/bahmutov/cy-spok-example/workflows/tests/badge.svg?branch=master) |
+<!-- prettier-ignore-start -->
+CI | status
+--- | ---
+[lint](.github/workflows/lint.yml) | ![Lint status](https://github.com/bahmutov/cy-spok/workflows/lint/badge.svg?branch=master)
+[cy-spok](.github/workflows/main.yml) | ![GH Action status](https://github.com/bahmutov/cy-spok/workflows/main/badge.svg?branch=master)
+[cy-spok-example](https://github.com/bahmutov/cy-spok-example) | ![cy-spok-example status](https://github.com/bahmutov/cy-spok-example/workflows/tests/badge.svg?branch=master)
+<!-- prettier-ignore-end -->
 
 See [cypress/integration/spec.js](cypress/integration/spec.js)
 

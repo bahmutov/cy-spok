@@ -34,6 +34,18 @@ it('spoks', () => {
   )
 })
 
+it('spoks several times', () => {
+  const o = {
+    one: 1,
+    two: 2,
+    three: 3,
+  }
+  cy.wrap(o).should(spok({ one: 1, two: 2 }))
+  // cannot chain callbacks with multiple assertions
+  // see https://github.com/cypress-io/cypress/issues/5979
+  // .and(spok({ two: 2 }))
+})
+
 it('retries until all pass', () => {
   const object = {
     one: 1,

@@ -30,9 +30,6 @@ class Assert {
 
 const spokHelper = expectation => {
   return function(value) {
-    console.log('value', value)
-    console.log('expectations', expectation)
-
     const assert = new Assert()
     spok(assert, value, expectation)
 

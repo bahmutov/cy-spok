@@ -84,3 +84,18 @@ it('uses should cb', () => {
     o.guess = 7
   }, 1000)
 })
+
+// to verify that can attach multiple spoks that use chained "should" callbacks
+// https://github.com/cypress-io/cypress/issues/5979
+// https://github.com/bahmutov/cy-spok/issues/7
+it.skip('two should callbacks (crashes and burns)', () => {
+  cy.wrap(null)
+    .should(() => {
+      console.log('in should()')
+      expect(true).to.be.true
+      expect(true).to.be.true
+    })
+    .and(() => {
+      console.log('in and ()')
+    })
+})

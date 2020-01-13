@@ -40,10 +40,12 @@ it('spoks several times', () => {
     two: 2,
     three: 3,
   }
-  cy.wrap(o).should(spok({ one: 1, two: 2 }))
-  // cannot chain callbacks with multiple assertions
-  // see https://github.com/cypress-io/cypress/issues/5979
-  // .and(spok({ two: 2 }))
+  // let's check if o.three is a number between 2 and 4
+  cy.wrap(o)
+    .should(spok({ one: 1 }))
+    .and(spok({ two: 2, three: spok.number }))
+    .and(spok({ three: spok.gt(2) }))
+    .and(spok({ three: spok.lt(4) }))
 })
 
 it('retries until all pass', () => {
@@ -88,7 +90,7 @@ it('uses should cb', () => {
 // to verify that can attach multiple spoks that use chained "should" callbacks
 // https://github.com/cypress-io/cypress/issues/5979
 // https://github.com/bahmutov/cy-spok/issues/7
-it.skip('two should callbacks (crashes and burns)', () => {
+it('two should callbacks (crashes and burns)', () => {
   cy.wrap(null)
     .should(() => {
       console.log('in should()')

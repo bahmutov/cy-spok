@@ -15,7 +15,7 @@
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "spok": "github:bahmutov/spok#7a1c65c",
+    "@bahmutov/spok": "1.2.0",
     "strip-ansi": "6.0.0"
   },
   "devDependencies": {

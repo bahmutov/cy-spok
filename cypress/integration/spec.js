@@ -75,11 +75,9 @@ it('uses should cb', () => {
   }
 
   // using "regular" should callback function
-  cy.wrap(o).should(obj => {
+  cy.wrap(o).should((obj) => {
     expect(obj.name).to.match(/^Hello/)
-    expect(obj.guess)
-      .to.be.gte(1)
-      .and.lte(10)
+    expect(obj.guess).to.be.gte(1).and.lte(10)
   })
 
   setTimeout(() => {

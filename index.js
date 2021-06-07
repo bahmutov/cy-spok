@@ -28,8 +28,8 @@ class Assert {
   }
 }
 
-const spokHelper = expectation => {
-  return function(value) {
+const spokHelper = (expectation) => {
+  return function (value) {
     const assert = new Assert()
     spok(assert, value, expectation)
 
@@ -40,17 +40,17 @@ const spokHelper = expectation => {
     const chaiUtilGetMessage = chai.util.getMessage
 
     try {
-      chai.util.getMessage = function(assert, args) {
+      chai.util.getMessage = function (assert, args) {
         return assert.__flags.message
       }
 
-      assert.passed.forEach(message => {
+      assert.passed.forEach((message) => {
         const msg = stripAnsi(message)
         // create passing assertion in the Command Log
         expect(true, msg).to.be.true
       })
 
-      assert.failed.forEach(message => {
+      assert.failed.forEach((message) => {
         const msg = stripAnsi(message)
         // create failing assertion in the Command Log
         expect(true, msg).to.be.false

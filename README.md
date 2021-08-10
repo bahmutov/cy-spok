@@ -15,5 +15,11 @@ See [cypress/integration/spec.js](cypress/integration/spec.js)
 
 ![Spok in action](img/cy-spok.gif)
 
+## vs deep.equal
+
+Spok prints a lot more information when using it compared to `deep.equal`. Note that Spok is a subset, not strict value equality.
+
+![deep.equal vs spok for complex objects](./img/vs-deep-equal.png)
+
 [renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
 [renovate-app]: https://renovateapp.com/

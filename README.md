@@ -11,7 +11,52 @@ CI | status
 [cy-spok-example](https://github.com/bahmutov/cy-spok-example) | ![cy-spok-example status](https://github.com/bahmutov/cy-spok-example/workflows/tests/badge.svg?branch=master)
 <!-- prettier-ignore-end -->
 
-See [cypress/integration/spec.js](cypress/integration/spec.js)
+## Install
+
+```
+$ npm i -D cy-spok
+```
+
+## Use
+
+See [spok](https://github.com/thlorenz/spok#readme) docs
+
+```js
+// in your Cypress spec file
+import spok from 'cy-spok'
+
+const object = {
+  one: 1,
+  two: 2,
+  three: 3,
+  four: 4,
+  helloWorld: 'hello world',
+  anyNum: 999,
+  anotherNum: 888,
+  anArray: [1, 2],
+  anotherArray: [1, 2, 3],
+  anObject: {},
+}
+
+// using Spok
+// https://github.com/thlorenz/spok#readme
+cy.wrap(object, { timeout: 2000 }).should(
+  spok({
+    $topic: 'spok-example', // optional
+    one: spok.ge(1),
+    two: 2,
+    three: spok.range(2, 6),
+    four: spok.lt(5),
+    helloWorld: spok.startsWith('hello'),
+    anyNum: spok.type('number'),
+    anotherNum: spok.number,
+    anArray: spok.array,
+    anObject: spok.ne(undefined),
+  }),
+)
+```
+
+See [cypress/integration/spec.js](cypress/integration/spec.js) here and in the [cy-spok-example](https://github.com/bahmutov/cy-spok-example) repo.
 
 ![Spok in action](img/cy-spok.gif)
 

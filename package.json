@@ -17,7 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "@bahmutov/spok": "1.2.0",
-    "strip-ansi": "6.0.0"
+    "strip-ansi": "6.0.1"
   },
   "devDependencies": {
     "cypress": "8.4.1",

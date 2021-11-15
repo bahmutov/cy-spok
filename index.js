@@ -19,7 +19,7 @@ class Assert {
   }
 
   deepEqual(actual, expected, msg) {
-    const pass = deepEqual(actual, expected)
+    const pass = Cypress._.deepEqual(actual, expected)
     if (!pass) {
       this.failed.push(msg)
     } else {

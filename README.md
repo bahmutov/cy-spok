@@ -66,5 +66,7 @@ Spok prints a lot more information when using it compared to `deep.equal`. Note 
 
 ![deep.equal vs spok for complex objects](./img/vs-deep-equal.png)
 
+See [deep-equal-spec.js](./cypress/integration/deep-equal-spec.js)
+
 [renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
 [renovate-app]: https://renovateapp.com/

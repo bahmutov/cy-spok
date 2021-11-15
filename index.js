@@ -1,4 +1,4 @@
-const spok = require('@bahmutov/spok').default
+const spok = require('spok').default
 const stripAnsi = require('strip-ansi')
 
 spok.color = false

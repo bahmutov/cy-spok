@@ -11,6 +11,11 @@ CI | status
 [cy-spok-example](https://github.com/bahmutov/cy-spok-example) | ![cy-spok-example status](https://github.com/bahmutov/cy-spok-example/workflows/tests/badge.svg?branch=master)
 <!-- prettier-ignore-end -->
 
+## Learn
+
+- Watch [Introduction To cy-spok Plugin For Writing Powerful Assertions For Objects](https://www.youtube.com/watch?v=MLDsqBd_gVU)
+- Read [Asserting Network Calls from Cypress Tests](https://www.cypress.io/blog/2019/12/23/asserting-network-calls-from-cypress-tests/)
+
 ## Install
 
 ```

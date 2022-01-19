@@ -1,18 +1,10 @@
 {
-  "extends": [
-    "config:base"
-  ],
+  "extends": ["config:base"],
   "automerge": true,
-  "labels": [
-    "type: dependencies",
-    "renovate"
-  ],
+  "labels": ["type: dependencies", "renovate"],
   "masterIssue": true,
-  "prConcurrentLimit": 3,
-  "prHourlyLimit": 2,
+  "prConcurrentLimit": 4,
+  "prHourlyLimit": 4,
   "timezone": "America/New_York",
-  "schedule": [
-    "after 11pm and before 1am on every weekday",
-    "every weekend"
-  ]
+  "schedule": ["after 11pm and before 1am on every weekday", "every weekend"]
 }

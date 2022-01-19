@@ -1,6 +1,16 @@
 const spok = require('spok').default
 const stripAnsi = require('strip-ansi')
 
+if (!Cypress) {
+  throw new Error('Missing Cypress global')
+}
+if (!Cypress._) {
+  throw new Error('Missing Cypress._ property')
+}
+if (!Cypress._.isEqual) {
+  throw new Error('Missing Cypress._.isEqual method')
+}
+
 spok.color = false
 spok.printDescription = false
 
@@ -19,7 +29,7 @@ class Assert {
   }
 
   deepEqual(actual, expected, msg) {
-    const pass = Cypress._.deepEqual(actual, expected)
+    const pass = Cypress._.isEqual(actual, expected)
     if (!pass) {
       this.failed.push(msg)
     } else {

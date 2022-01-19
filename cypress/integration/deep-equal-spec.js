@@ -30,3 +30,15 @@ it('default deep.equal vs spok', () => {
   // but can pass if the expected object has fewer properties
   cy.wrap(person, { timeout: 0 }).should(spok(expected))
 })
+
+it('compares arrays by value', () => {
+  const a = [1, { name: 'Joe' }, [3, 4]]
+  cy.wrap(a, { timeout: 0 }).should(
+    spok({
+      length: 3,
+      0: 1, // at first position is number 1
+      1: { name: spok.string }, // an object with a string property "name"
+      2: (a) => Array.isArray(a) && a.length === 2, // array with two elements
+    }),
+  )
+})

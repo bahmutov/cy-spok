@@ -21,7 +21,8 @@
   },
   "devDependencies": {
     "cypress": "9.1.0",
-    "prettier": "2.5.0"
+    "prettier": "2.5.0",
+    "semantic-release": "^19.0.2"
   },
   "files": []
 }

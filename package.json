@@ -20,7 +20,7 @@
     "strip-ansi": "6.0.1"
   },
   "devDependencies": {
-    "cypress": "9.6.0",
+    "cypress": "9.6.1",
     "prettier": "2.6.2",
     "semantic-release": "19.0.2"
   },

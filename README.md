@@ -74,6 +74,53 @@ Spok prints a lot more information when using it compared to `deep.equal`. Note 
 
 See [deep-equal-spec.js](./cypress/integration/deep-equal-spec.js)
 
+## Treat arrays as an object
+
+```js
+// verify each item in an array as an object
+cy.wrap(['one', 42, 'three']).should(
+  spok({
+    0: spok.string,
+    1: spok.number,
+    2: spok.string,
+  }),
+)
+```
+
+## Use Lodash predicates
+
+Lodash has many predicate functions `is...`, see [Lodash docs](https://lodash.com/docs)
+
+```js
+cy.wrap({
+  name: 'Joe',
+  age: 20,
+}).should(
+  spok({
+    name: Cypress._.isString,
+    age: Cypress._.isNumber,
+  }),
+)
+```
+
+## Own predicate
+
+Any synchronous function that returns a boolean could be a predicate
+
+```js
+// it is a list of strings
+const areGreetings = (list) =>
+  Array.isArray(list) && list.every(Cypress._.isString)
+
+cy.wrap({
+  greetings: ['hello', 'hi'],
+}).should(
+  spok({
+    greetings: areGreetings,
+  }),
+)
+```
+
 ## Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2021

@@ -99,3 +99,41 @@ it('two should callbacks (crashes and burns)', () => {
       console.log('in and ()')
     })
 })
+
+it('checks arrays', () => {
+  cy.wrap(42).should('be.a', 'number').and('equal', 42)
+  // verify each item in an array as an object
+  cy.wrap(['one', 42, 'three']).should(
+    spok({
+      0: spok.string,
+      1: spok.number,
+      2: spok.string,
+    }),
+  )
+})
+
+it('uses Cypress._ predicates', () => {
+  cy.wrap({
+    name: 'Joe',
+    age: 20,
+  }).should(
+    spok({
+      name: Cypress._.isString,
+      age: Cypress._.isNumber,
+    }),
+  )
+})
+
+it('own predicate', () => {
+  // it is a list of strings
+  const areGreetings = (list) =>
+    Array.isArray(list) && list.every(Cypress._.isString)
+
+  cy.wrap({
+    greetings: ['hello', 'hi'],
+  }).should(
+    spok({
+      greetings: areGreetings,
+    }),
+  )
+})

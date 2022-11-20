@@ -22,7 +22,7 @@
   "devDependencies": {
     "cypress": "9.7.0",
     "prettier": "2.7.1",
-    "semantic-release": "19.0.3"
+    "semantic-release": "19.0.5"
   },
   "files": [
     "index.js",

@@ -6,12 +6,22 @@ jobs:
     name: Build and test
     steps:
       - uses: actions/checkout@v3
-      - uses: cypress-io/github-action@v2
+      - uses: cypress-io/github-action@v5
+
+  release:
+    needs: [build-and-test]
+    runs-on: ubuntu-20.04
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v3
+
+      - name: Install only the semantic release 📦
+        run: npm install semantic-release
 
       # https://github.com/cycjimmy/semantic-release-action
-      - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v2
-        id: semantic
+      - name: Semantic Release 🚀
+        uses: cycjimmy/semantic-release-action@v3
         with:
           branch: master
         env:

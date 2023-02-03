@@ -14,6 +14,7 @@ it('spoks', () => {
     anArray: [1, 2],
     anotherArray: [1, 2, 3],
     anObject: {},
+    id: 'abc123',
   }
 
   // using Spok
@@ -30,6 +31,8 @@ it('spoks', () => {
       anotherNum: spok.number,
       anArray: spok.array,
       anObject: spok.ne(undefined),
+      // test a string using regular expression
+      id: spok.test(/^abc\d{3}$/),
     }),
   )
 })

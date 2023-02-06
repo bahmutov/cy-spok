@@ -14,6 +14,7 @@ CI | status
 ## Learn
 
 - 📺 Watch [Introduction To cy-spok Plugin For Writing Powerful Assertions For Objects](https://www.youtube.com/watch?v=MLDsqBd_gVU)
+- 📺 Watch [Confirm Text In Multiple Page Elements Using cy-spok](https://youtu.be/l6_OXPiqkxQ)
 - 📝 Read [Asserting Network Calls from Cypress Tests](https://www.cypress.io/blog/2019/12/23/asserting-network-calls-from-cypress-tests/)
 - 📝 Read [Change E2E Tests From UI To API To App Actions](https://glebbahmutov.com/blog/ui-to-api-to-app-actions/)
 - 📝 Read [Two Simple Tricks To Make Your Cypress Tests Better](https://glebbahmutov.com/blog/two-cypress-tricks/)

@@ -45,6 +45,7 @@ const object = {
   anotherArray: [1, 2, 3],
   anObject: {},
   id: 'abc123',
+  list: ['one', 'two', 'three'],
 }
 
 // using Spok
@@ -63,6 +64,8 @@ cy.wrap(object, { timeout: 2000 }).should(
     anObject: spok.ne(undefined),
     // test a string using regular expression
     id: spok.test(/^abc\d{3}$/),
+    // array with 3 elements
+    list: spok.arrayElements(3),
   }),
 )
 ```

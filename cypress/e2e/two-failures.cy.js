@@ -2,7 +2,8 @@
 
 import spok from '../..'
 
-it('shows the first failure only', () => {
+// skip the test because it is meant to show the failures
+it.skip('shows the first failure only', () => {
   // in the test below, there are 3 passing checks
   // and two failures. Only the first failure
   // is shown, and all passing checks are shown

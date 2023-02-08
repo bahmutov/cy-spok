@@ -126,6 +126,30 @@ cy.wrap({
 )
 ```
 
+## First failure only
+
+If there are multiple failing predicates, only the first one is shown. All passing predicates are shown
+
+```js
+cy.wrap({
+  name: 'Joe',
+  age: 42,
+  job: 'chimney sweeper',
+  location: 'Boston',
+  present: true,
+}).should(
+  spok({
+    name: 'Mary', // fails
+    age: 42, // passes
+    job: 'secret agent', // fails
+    location: 'Boston', // passes
+    present: spok.type('boolean'), // passes
+  }),
+)
+```
+
+![Only the first failed predicate is shown](./img/two.png)
+
 ## Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2021

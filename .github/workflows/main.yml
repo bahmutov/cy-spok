@@ -1,15 +1,24 @@
 name: main
 on: [push]
 jobs:
-  build-and-test:
+  test:
     runs-on: ubuntu-latest
     name: Build and test
     steps:
       - uses: actions/checkout@v3
       - uses: cypress-io/github-action@v5
 
+  test-esbuild:
+    runs-on: ubuntu-latest
+    name: Build and test
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cypress-io/github-action@v5
+        with:
+          config-file: cypress-esbuild.config.js
+
   release:
-    needs: [build-and-test]
+    needs: [test, test-esbuild]
     runs-on: ubuntu-20.04
     if: github.ref == 'refs/heads/master'
     steps:

@@ -1,4 +1,4 @@
-const spok = require('spok').default
+const spok = require('@bahmutov/spok').default
 const stripAnsi = require('strip-ansi')
 
 if (!Cypress) {

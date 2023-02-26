@@ -18,6 +18,7 @@ CI | status
 - 📝 Read [Asserting Network Calls from Cypress Tests](https://www.cypress.io/blog/2019/12/23/asserting-network-calls-from-cypress-tests/)
 - 📝 Read [Change E2E Tests From UI To API To App Actions](https://glebbahmutov.com/blog/ui-to-api-to-app-actions/)
 - 📝 Read [Two Simple Tricks To Make Your Cypress Tests Better](https://glebbahmutov.com/blog/two-cypress-tricks/)
+- 📝 Read [Crawl Weather Using Cypress](https://glebbahmutov.com/blog/crawl-weather/)
 - 🎓 Covered in my course [Cypress Plugins](https://cypress.tips/courses/cypress-plugins)
   - [Lesson e1: Validate network requests using cy-spok](https://cypress.tips/courses/cypress-plugins/lessons/e1)
   - [Lesson e2: Use your own predicates to validate object properties](https://cypress.tips/courses/cypress-plugins/lessons/e2)

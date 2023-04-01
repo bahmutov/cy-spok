@@ -24,7 +24,7 @@
     "cypress": "12.9.0",
     "esbuild": "^0.17.0",
     "prettier": "2.8.7",
-    "semantic-release": "21.0.0"
+    "semantic-release": "21.0.1"
   },
   "files": [
     "index.js",

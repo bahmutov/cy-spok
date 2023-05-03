@@ -24,6 +24,9 @@ CI | status
   - [Lesson e2: Use your own predicates to validate object properties](https://cypress.tips/courses/cypress-plugins/lessons/e2)
   - [Lesson e3: Validate URL search parameters](https://cypress.tips/courses/cypress-plugins/lessons/e3)
   - [Lesson e4: Check and control the Redux store using cy-spok plugin](https://cypress.tips/courses/cypress-plugins/lessons/e4)
+- 🎓 Covered in my course [Cypress Network Testing Exercises](https://cypress.tips/courses/network-testing)
+  - [Bonus 28: Use cy-spok plugin to write complex assertions](https://cypress.tips/courses/network-testing/lessons/bonus28)
+  - [Bonus 101: Confirm the server supports caching using the ETag header](https://cypress.tips/courses/network-testing/lessons/bonus101)
 
 ## Install
 

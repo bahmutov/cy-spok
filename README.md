@@ -15,10 +15,12 @@ CI | status
 
 - 📺 Watch [Introduction To cy-spok Plugin For Writing Powerful Assertions For Objects](https://www.youtube.com/watch?v=MLDsqBd_gVU)
 - 📺 Watch [Confirm Text In Multiple Page Elements Using cy-spok](https://youtu.be/l6_OXPiqkxQ)
+- 📺 Watch [Verify Cypress Component Prop Calls Using Stubs, cypress-map, and cy-spok](https://youtu.be/zdjjBRt6Z74)
 - 📝 Read [Asserting Network Calls from Cypress Tests](https://www.cypress.io/blog/2019/12/23/asserting-network-calls-from-cypress-tests/)
 - 📝 Read [Change E2E Tests From UI To API To App Actions](https://glebbahmutov.com/blog/ui-to-api-to-app-actions/)
 - 📝 Read [Two Simple Tricks To Make Your Cypress Tests Better](https://glebbahmutov.com/blog/two-cypress-tricks/)
 - 📝 Read [Crawl Weather Using Cypress](https://glebbahmutov.com/blog/crawl-weather/)
+- 📝 Read [Testing React Number Format Component Example](https://glebbahmutov.com/blog/test-react-number-format/)
 - 🎓 Covered in my course [Cypress Plugins](https://cypress.tips/courses/cypress-plugins)
   - [Lesson e1: Validate network requests using cy-spok](https://cypress.tips/courses/cypress-plugins/lessons/e1)
   - [Lesson e2: Use your own predicates to validate object properties](https://cypress.tips/courses/cypress-plugins/lessons/e2)

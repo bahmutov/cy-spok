@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
-    "cypress": "12.17.2",
+    "cypress": "12.17.3",
     "esbuild": "^0.18.0",
     "prettier": "3.0.0",
     "semantic-release": "21.0.7"

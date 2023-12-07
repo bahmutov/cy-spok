@@ -29,6 +29,8 @@ CI | status
 - 🎓 Covered in my course [Cypress Network Testing Exercises](https://cypress.tips/courses/network-testing)
   - [Bonus 28: Use cy-spok plugin to write complex assertions](https://cypress.tips/courses/network-testing/lessons/bonus28)
   - [Bonus 101: Confirm the server supports caching using the ETag header](https://cypress.tips/courses/network-testing/lessons/bonus101)
+- 🎓 Covered in my course [Cypress vs Playwright](https://cypress.tips/courses/cypress-vs-playwright)
+  - [Lesson d8: Assert complex objects](https://cypress.tips/courses/cypress-vs-playwright/lessons/d8)
 
 ## Install
 

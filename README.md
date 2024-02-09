@@ -22,6 +22,7 @@ CI | status
 - 📝 Read [Crawl Weather Using Cypress](https://glebbahmutov.com/blog/crawl-weather/)
 - 📝 Read [Testing React Number Format Component Example](https://glebbahmutov.com/blog/test-react-number-format/)
 - 📝 Read [Cypress Flakiness Examples](https://glebbahmutov.com/blog/flakiness-example/)
+- 📝 Read [Use Cypress For API Testing](https://glebbahmutov.com/blog/use-cypress-for-api-testing/)
 - 🎓 Covered in my course [Cypress Plugins](https://cypress.tips/courses/cypress-plugins)
   - [Lesson e1: Validate network requests using cy-spok](https://cypress.tips/courses/cypress-plugins/lessons/e1)
   - [Lesson e2: Use your own predicates to validate object properties](https://cypress.tips/courses/cypress-plugins/lessons/e2)

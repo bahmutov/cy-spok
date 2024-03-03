@@ -1,4 +1,4 @@
-# cy-spok [![renovate-app badge][renovate-badge]][renovate-app] ![cypress version](https://img.shields.io/badge/cypress-13.6.5-brightgreen)
+# cy-spok [![renovate-app badge][renovate-badge]][renovate-app] ![cypress version](https://img.shields.io/badge/cypress-13.6.6-brightgreen)
 
 > Playing with [spok](https://github.com/thlorenz/spok) inside Cypress test
 

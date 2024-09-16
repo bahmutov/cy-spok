@@ -25,6 +25,7 @@ CI | status
 - 📝 Read [Cypress Flakiness Examples](https://glebbahmutov.com/blog/flakiness-example/)
 - 📝 Read [Use Cypress For API Testing](https://glebbahmutov.com/blog/use-cypress-for-api-testing/)
 - 📝 Read [Check Fees And Totals Using Cypress](https://glebbahmutov.com/blog/check-fees-using-cypress/)
+- 📝 Read [Retry Network Requests](https://glebbahmutov.com/blog/retry-network-requests/)
 - 🎓 Covered in my course [Cypress Plugins](https://cypress.tips/courses/cypress-plugins)
   - [Lesson e1: Validate network requests using cy-spok](https://cypress.tips/courses/cypress-plugins/lessons/e1)
   - [Lesson e2: Use your own predicates to validate object properties](https://cypress.tips/courses/cypress-plugins/lessons/e2)

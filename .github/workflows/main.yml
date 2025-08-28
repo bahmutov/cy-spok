@@ -30,7 +30,7 @@ jobs:
 
       # https://github.com/cycjimmy/semantic-release-action
       - name: Semantic Release 🚀
-        uses: cycjimmy/semantic-release-action@v3
+        uses: cycjimmy/semantic-release-action@v4
         with:
           branch: master
         env:

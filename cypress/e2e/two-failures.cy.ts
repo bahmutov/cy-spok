@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 import spok from '../..'
 
 // skip the test because it is meant to show the failures

@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 import spok from '../..'
 
 it('spoks', () => {
@@ -132,7 +130,7 @@ it('uses Cypress._ predicates', () => {
 
 it('own predicate', () => {
   // it is a list of strings
-  const areGreetings = (list) =>
+  const areGreetings = (list: string[]) =>
     Array.isArray(list) && list.every(Cypress._.isString)
 
   cy.wrap({

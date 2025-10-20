@@ -3,11 +3,13 @@
   "version": "0.0.0-development",
   "description": "Wrapper for spok assertion",
   "main": "index.js",
+  "types": "index.d.ts",
   "private": false,
   "scripts": {
     "test": "cypress run",
     "lint": "prettier --check '*.js' 'cypress/**/*.js'",
-    "fix": "prettier --write '*.js' 'cypress/**/*.js'"
+    "fix": "prettier --write '*.js' 'cypress/**/*.js'",
+    "typecheck": "tsc --noEmit"
   },
   "keywords": [
     "spok",
@@ -21,10 +23,12 @@
   },
   "devDependencies": {
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "@types/node": "^24.9.0",
     "cypress": "15.5.0",
     "esbuild": "^0.25.0",
     "prettier": "3.6.2",
-    "semantic-release": "25.0.1"
+    "semantic-release": "25.0.1",
+    "typescript": "^5.9.3"
   },
   "files": [
     "index.js",

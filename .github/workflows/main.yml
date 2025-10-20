@@ -7,13 +7,15 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: cypress-io/github-action@v5
+        with:
+          build: npm run typecheck
 
   test-esbuild:
     runs-on: ubuntu-latest
     name: Build and test
     steps:
       - uses: actions/checkout@v5
-      - uses: cypress-io/github-action@v5
+      - uses: cypress-io/github-action@v6
         with:
           config-file: cypress-esbuild.config.js
 

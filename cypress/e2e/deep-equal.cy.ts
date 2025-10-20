@@ -38,7 +38,7 @@ it('compares arrays by value', () => {
       length: 3,
       0: 1, // at first position is number 1
       1: { name: spok.string }, // an object with a string property "name"
-      2: (a) => Array.isArray(a) && a.length === 2, // array with two elements
+      2: (a: unknown[]) => Array.isArray(a) && a.length === 2, // array with two elements
     }),
   )
 })

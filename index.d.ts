@@ -1,25 +1,37 @@
-// // import {
-//   SpokAssertions,
-//   SpokConfig,
-//   Specifications,
-//   SpokFunctionAny,
-//   Assert,
-// } from '@bahmutov/spok/dist/spok'
-// import { ExpectFn } from '@bahmutov/spok/dist/adapter-chai-expect'
+// Type definitions for cy-spok wrapper
+// The runtime export is a function (expectations) => (value) => void
+// augmented with all the properties of underlying spok plus reference to the original spok.
 
-// declare type SpokFunction<Subject> = (currentSubject: Subject) => void
+import type spokOriginal from '@bahmutov/spok'
 
-// declare type SpokHelper<Subject = any> = (
-//   specifications: Specifications<Subject>,
-// ) => SpokFunction<Subject>
+// Re-export selected upstream types for convenience
+export type { Specifications } from '@bahmutov/spok/dist/spok'
 
-// declare const Spok: SpokHelper &
-//   SpokAssertions &
-//   SpokConfig & {
-//     any: SpokFunctionAny
-//     adapters: {
-//       chaiExpect: (expectFn: ExpectFn<any>) => Assert
-//     }
-//   }
+// Pull in upstream default export type
+type SpokRuntime = typeof spokOriginal
 
-// export = Spok
+// Our assertion result collector (mirrors runtime implementation, but minimal surface)
+export interface CySpokAssert {
+  failed: string[]
+  passed: string[]
+  equal(actual: any, expected: any, msg?: string): void
+  deepEqual(actual: any, expected: any, msg?: string): void
+}
+
+// Function returned by calling cy-spok with specifications; Cypress will call it with the subject value
+export type CySpokFunction<Subject = any> = (value: Subject) => void
+
+// Helper function signature: accepts specifications and returns a function to be used in cy.should()
+export interface CySpokHelper {
+  <Subject = any>(
+    specifications: import('@bahmutov/spok/dist/spok').Specifications,
+  ): CySpokFunction<Subject>
+}
+
+// The exported value combines callable helper + all spok predicates + a reference to original spok
+export interface CySpok extends CySpokHelper, SpokRuntime {
+  spok: SpokRuntime
+}
+
+declare const cySpok: CySpok
+export default cySpok

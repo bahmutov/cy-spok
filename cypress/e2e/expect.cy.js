@@ -8,5 +8,6 @@ import spok from '@bahmutov/spok'
 
 // crashes with "strip is not a function" error
 it.skip('works with expect', () => {
+  // @ts-ignore
   spok(t, { name: 'joe' }, { name: spok.string })
 })

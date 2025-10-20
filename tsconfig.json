@@ -10,7 +10,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "types": ["cypress", "node"],
+    "types": ["cypress"],
     "resolveJsonModule": true
   },
   "include": ["index.js", "index.d.ts", "cypress/**/*.js"],

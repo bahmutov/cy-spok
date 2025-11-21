@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and test
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: cypress-io/github-action@v5
         with:
           build: npm run typecheck
@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and test
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: cypress-io/github-action@v6
         with:
           config-file: cypress-esbuild.config.js
@@ -25,7 +25,7 @@ jobs:
     if: github.ref == 'refs/heads/master'
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Install only the semantic release 📦
         run: npm install semantic-release

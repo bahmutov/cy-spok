@@ -6,7 +6,7 @@ jobs:
     name: Build and test
     steps:
       - uses: actions/checkout@v6
-      - uses: cypress-io/github-action@v5
+      - uses: cypress-io/github-action@v7.1.9
         with:
           build: npm run typecheck
 
@@ -15,7 +15,7 @@ jobs:
     name: Build and test
     steps:
       - uses: actions/checkout@v6
-      - uses: cypress-io/github-action@v6
+      - uses: cypress-io/github-action@v7.1.9
         with:
           config-file: cypress-esbuild.config.js
 

@@ -19,7 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "@bahmutov/spok": "1.2.10",
-    "strip-ansi": "6.0.1"
+    "strip-ansi": "7.2.0"
   },
   "devDependencies": {
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",

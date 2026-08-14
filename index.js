@@ -41,7 +41,7 @@ class Assert {
 const spokHelper = (expectation) => {
   return function (value) {
     const assert = new Assert()
-    spok(assert, value, expectation)
+    spok(assert, Cypress._.cloneDeep(value), expectation)
 
     // by default, Chai assertions will print actual and expected values
     // but Spok already gives us the complete error message

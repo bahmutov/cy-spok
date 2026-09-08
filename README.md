@@ -27,6 +27,7 @@ CI | status
 - 📝 Read [Check Fees And Totals Using Cypress](https://glebbahmutov.com/blog/check-fees-using-cypress/)
 - 📝 Read [Retry Network Requests](https://glebbahmutov.com/blog/retry-network-requests/)
 - 📝 Read [Check Data Using Page Objects And Higher Order Functions](https://glebbahmutov.com/blog/check-data-in-page-objects/)
+- 📝 Read [Implicit Assertions Are More Readable](https://glebbahmutov.com/blog/implicit-assertions-are-more-readable/)
 - 🎓 Covered in my course [Cypress Plugins](https://cypress.tips/courses/cypress-plugins)
   - [Lesson e1: Validate network requests using cy-spok](https://cypress.tips/courses/cypress-plugins/lessons/e1)
   - [Lesson e2: Use your own predicates to validate object properties](https://cypress.tips/courses/cypress-plugins/lessons/e2)

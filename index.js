@@ -41,6 +41,7 @@ class Assert {
 const spokHelper = (expectation) => {
   return function (value) {
     const assert = new Assert()
+    debugger
     spok(assert, value, expectation)
 
     // by default, Chai assertions will print actual and expected values

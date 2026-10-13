@@ -173,6 +173,23 @@ cy.wrap({
 
 ![Only the first failed predicate is shown](./img/two.png)
 
+## Explicit assertion
+
+You can create assertions to be applied explicitly
+
+```js
+import spok from 'cy-spok'
+
+it('checks the name property', () => {
+  const checkName = spok({
+    name: spok.string,
+  })
+
+  // throws an error if the give argument does not pass
+  checkName({ name: 'joe' })
+})
+```
+
 ## Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2021

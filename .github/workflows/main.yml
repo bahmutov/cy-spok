@@ -21,9 +21,22 @@ jobs:
 
   release:
     needs: [test, test-esbuild]
-    runs-on: ubuntu-26.04
+    runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
+    permissions:
+      # allow the release step to comment on
+      # issues, pull requests, and write to the repo
+      contents: write
+      issues: write
+      pull-requests: write
+      # Required for OIDC to let NPM registry know
+      # that this workflow is trusted
+      id-token: write
     steps:
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
       - name: Checkout 🛎
         uses: actions/checkout@v7
 
@@ -37,4 +50,3 @@ jobs:
           branch: master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

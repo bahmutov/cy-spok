@@ -141,3 +141,11 @@ it('own predicate', () => {
     }),
   )
 })
+
+it('checks oneOf values', () => {
+  cy.wrap({ fruit: 'apple' }).should(
+    spok({
+      fruit: spok.oneOf(['apple', 'banana', 'orange']),
+    }),
+  )
+})

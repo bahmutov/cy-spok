@@ -1,5 +1,5 @@
 const spok = require('@bahmutov/spok').default
-const stripAnsi = require('strip-ansi')
+const stripAnsi = require('strip-ansi').default
 
 if (!Cypress) {
   throw new Error('Missing Cypress global')

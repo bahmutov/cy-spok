@@ -47,6 +47,6 @@ jobs:
       - name: Semantic Release 🚀
         uses: cycjimmy/semantic-release-action@v7.1.2
         with:
-          branches: [master]
+          branches: master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

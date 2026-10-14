@@ -115,6 +115,18 @@ cy.wrap(['one', 42, 'three']).should(
 )
 ```
 
+## oneOf
+
+Checks if the given value is one of the items in the list (reference comparison)
+
+```js
+cy.wrap({ fruit: 'apple' }).should(
+  spok({
+    fruit: spok.oneOf(['apple', 'banana', 'orange']),
+  }),
+)
+```
+
 ## Use Lodash predicates
 
 Lodash has many predicate functions `is...`, see [Lodash docs](https://lodash.com/docs)
